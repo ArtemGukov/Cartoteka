@@ -75,6 +75,16 @@ class TableViewController: UITableViewController {
         
         cars.append(car)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "detailSegue" else { return }
+        guard let detailViewController = segue.destination as? DetailViewController else { return }
+        
+        if let carIndex = tableView.indexPathForSelectedRow?.row {
+            detailViewController.car = cars[carIndex]
+                        
+        }
+    }
 }
 
 extension TableViewController {
