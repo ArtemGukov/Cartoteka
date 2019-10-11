@@ -33,7 +33,8 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate {
     
     //    MARK: - Properties
     
-    var newCar: Car!
+    var newCar = Car()
+    var currentCar: Car?
     
     var brandPickerData: [String] = Brand.allCases.map { $0.rawValue }.sorted(by: { $0 < $1 })
     var bodyTypePickerData: [String] = BodyType.allCases.map { $0.rawValue }
@@ -76,12 +77,13 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate {
     let transmissionTypePicker = UIPickerView()
     
     let toolbar = UIToolbar()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        
         createPicker()
+        setupEditScreen()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -203,32 +205,61 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate {
         return true
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+
+    }
     
 //    MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
-        newCar = Car(
-                    brand: Brand(rawValue: brandTextField.text!),
-                    model: modelTextField.text,
-                    yearOfManufacture: Int(yearTextField.text!),
-                    
-                    engineType: EngineType(rawValue: engineTypeTextField.text!),
-                    enginePower: Int(enginePowerTextField.text!),
-                    engineValue: Double(engineValueTextField.text!),
-                    
-                    bodyType: BodyType(rawValue: bodyTypeTextField.text!),
-                    bodyColor: BodyColor(rawValue: bodyColorTextField.text!),
-                    
-                    wheelDrive: WheelDrive(rawValue: wheelDriveTextField.text!),
-                    transmissionType: TransmissionType(rawValue: transmissionTypeTextField.text!)
-                )
+            newCar = Car(
+                brand: Brand(rawValue: brandTextField.text!),
+                model: modelTextField.text,
+                yearOfManufacture: Int(yearTextField.text!),
+            
+                engineType: EngineType(rawValue: engineTypeTextField.text!),
+                enginePower: Int(enginePowerTextField.text!),
+                engineValue: Double(engineValueTextField.text!),
+            
+                bodyType: BodyType(rawValue: bodyTypeTextField.text!),
+                bodyColor: BodyColor(rawValue: bodyColorTextField.text!),
+            
+                wheelDrive: WheelDrive(rawValue: wheelDriveTextField.text!),
+                transmissionType: TransmissionType(rawValue: transmissionTypeTextField.text!)
+            )
         }
-      
+
     func areFieldsReady() -> Bool {
         
         return !brandTextField.isEmpty && !modelTextField.isEmpty && !yearTextField.isEmpty && !engineTypeTextField.isEmpty && !engineValueTextField.isEmpty && !enginePowerTextField.isEmpty && !bodyTypeTextField.isEmpty && !bodyColorTextField.isEmpty && !transmissionTypeTextField.isEmpty && !wheelDriveTextField.isEmpty
       }
+    
+    func setupEditScreen() {
+        
+        if currentCar != nil {
+            
+            title = "Edit"
+            
+            brandTextField.text = selectedRowPickerView(brandPicker, withText: currentCar!.brand.map { $0.rawValue }!)
+            modelTextField.text = currentCar!.model
+            yearTextField.text = selectedRowPickerView(yearPicker, withText: (currentCar?.yearOfManufacture!.description)!)
+            
+            engineTypeTextField.text = selectedRowPickerView(engineTypePicker, withText: currentCar!.engineType.map { $0.rawValue }!)
+            enginePowerTextField.text = selectedRowPickerView(enginePowerPicker, withText: currentCar!.enginePower.map { $0.description }!)
+            engineValueTextField.text = selectedRowPickerView(engineValuePicker, withText: currentCar!.engineValue.map { $0.description }!)
+            
+            bodyTypeTextField.text = selectedRowPickerView(bodyTypePicker, withText: currentCar!.bodyType.map { $0.rawValue }!)
+            bodyColorTextField.text = selectedRowPickerView(bodyColorPicker, withText: currentCar!.bodyColor.map { $0.rawValue }!)
+            
+            transmissionTypeTextField.text = selectedRowPickerView(transmissionTypePicker, withText: currentCar!.transmissionType.map { $0.rawValue }!)
+            wheelDriveTextField.text = selectedRowPickerView(wheelDrivePicker, withText: currentCar!.wheelDrive.map { $0.rawValue }!)
+            
+            if let image = UIImage(named: "\(currentCar!.brand!.rawValue).png") {
+                imageLogo.image = image
+            }
+        }
+    }
 
     
     //  MARK:   IBActions
@@ -338,7 +369,7 @@ extension AddTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
                 
                 let decimalValue = engineValueData[2][engineValuePicker.selectedRow(inComponent: 2)]
 
-                return engineValueTextField.text = digitsValue + "." + decimalValue
+                return engineValueTextField.text = "\(digitsValue).\(decimalValue)"
             case 9:
                 var resultString = ""
                 
@@ -359,5 +390,87 @@ extension AddTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
                 break
             }
         }
-    }
+        
+    func selectedRowPickerView(_ pickerView: UIPickerView, withText text: String) -> String {
+        
+        var resultString = ""
+        
+        switch pickerView.tag {
+            
+        case 1:
+            if let row = brandPickerData.firstIndex(of: text) {
+                pickerView.selectRow(row, inComponent: 0, animated: true)
+                resultString = brandPickerData[row]
+            }
+        case 2:
+            if let row = bodyTypePickerData.firstIndex(of: text) {
+                pickerView.selectRow(row, inComponent: 0, animated: true)
+                resultString = bodyTypePickerData[row]
+            }
+        case 3:
+            if let row = bodyColorPickerData.firstIndex(of: text) {
+                pickerView.selectRow(row, inComponent: 0, animated: true)
+                resultString = bodyColorPickerData[row]
+            }
+        case 4:
+            if let row = wheelDrivePickerData.firstIndex(of: text) {
+                pickerView.selectRow(row, inComponent: 0, animated: true)
+                resultString = wheelDrivePickerData[row]
+            }
+        case 5:
+            if let row = transmissionTypePickerData.firstIndex(of: text) {
+                pickerView.selectRow(row, inComponent: 0, animated: true)
+                resultString = transmissionTypePickerData[row]
+            }
+        case 6:
+            if let row = engineTypePickerData.firstIndex(of: text) {
+                pickerView.selectRow(row, inComponent: 0, animated: true)
+                resultString = engineTypePickerData[row]
+            }
+        case 7:
+            if let row = yearsPickerData.firstIndex(of: text) {
+                pickerView.selectRow(row, inComponent: 0, animated: true)
+                resultString = yearsPickerData[row]
+            }
+        case 8:
 
+            let value = text.components(separatedBy: ".")
+        
+            pickerView.selectRow(engineValueData[0].firstIndex(of: value[0])!, inComponent: 0, animated: true)
+            pickerView.selectRow(engineValueData[2].firstIndex(of: value[1])!, inComponent: 2, animated: true)
+            
+            let digitsValue = engineValueData[0][engineValuePicker.selectedRow(inComponent: 0)]
+            
+            let decimalValue = engineValueData[2][engineValuePicker.selectedRow(inComponent: 2)]
+            
+            resultString = "\(digitsValue).\(decimalValue)"
+
+        case 9:
+                
+            let value = text.compactMap { String($0) }
+            
+            pickerView.selectRow(enginePowerData[0].firstIndex(of: value[0])!, inComponent: 0, animated: true)
+            pickerView.selectRow(enginePowerData[1].firstIndex(of: value[1])!, inComponent: 1, animated: true)
+            pickerView.selectRow(enginePowerData[2].firstIndex(of: value[2])!, inComponent: 2, animated: true)
+                
+            let firstValue = enginePowerData[0][enginePowerPicker.selectedRow(inComponent: 0)]
+                
+            let secondValue = enginePowerData[1][enginePowerPicker.selectedRow(inComponent: 1)]
+                
+            let thirdValue = enginePowerData[2][enginePowerPicker.selectedRow(inComponent: 2)]
+                
+                if firstValue == "0" {
+                    resultString = secondValue + thirdValue
+                } else {
+                    resultString = firstValue + secondValue + thirdValue
+                }
+            
+        default:
+            break
+        }
+        
+        return resultString
+
+}
+
+}

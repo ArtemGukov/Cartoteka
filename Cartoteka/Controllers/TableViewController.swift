@@ -71,9 +71,9 @@ class TableViewController: UITableViewController {
    
     @IBAction func savePressed(segue: UIStoryboardSegue) {
         
-        guard let addTableViewController = segue.source as? AddTableViewController, let car = addTableViewController.newCar  else { return }
+        guard let addTableViewController = segue.source as? AddTableViewController else { return }
         
-        cars.append(car)
+        cars.append(addTableViewController.newCar)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

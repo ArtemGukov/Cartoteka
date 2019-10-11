@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+//    MARK: - IBOutlets
+    
     @IBOutlet weak var viewBrand: UIView!
     @IBOutlet weak var imageBrandLogo: UIImageView!
     @IBOutlet weak var labelBrand: UILabel!
@@ -39,6 +41,8 @@ class DetailViewController: UIViewController {
         setupUI()
     }
     
+//    MARK: - Custom methods
+    
     func setupUI() {
         
         viewBrand.layer.cornerRadius = 10
@@ -62,4 +66,21 @@ class DetailViewController: UIViewController {
         labelTransmissionType.text = car.transmissionType!.rawValue
         labelTransmissionWheelDrive.text = "\(car.wheelDrive!.rawValue) привод"
     }
+    
+//    MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "editSegue" else { return }
+        guard let addTableViewController = segue.destination as? AddTableViewController else { return }
+        addTableViewController.currentCar = car
+    }
+    
+//    @IBAction func editPressed(segue: UIStoryboardSegue) {
+//
+//        guard let addTableViewController = segue.source as? AddTableViewController, let car = addTableViewController.newCar  else { return }
+//
+//        //cars.append(car)
+//    }
+    
+    
 }

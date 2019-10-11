@@ -346,14 +346,9 @@
                         <viewLayoutGuide key="safeArea" id="rU1-Xc-fol"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="gyg-3v-L2a">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6Sr-Fa-NeQ">
-                            <connections>
-                                <segue destination="jg6-mM-Hzi" kind="unwind" unwindAction="cancelPressedWithSegue:" id="1IV-Ns-jNj"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="lWq-Np-1LR">
                             <connections>
-                                <segue destination="jg6-mM-Hzi" kind="unwind" identifier="editSegue" unwindAction="editPressedWithSegue:" id="53B-T1-yla"/>
+                                <segue destination="Qal-0H-DlD" kind="show" identifier="editSegue" id="3bP-0X-03Z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -378,7 +373,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AcT-hy-kOg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="jg6-mM-Hzi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1811.25" y="1013.0281690140845"/>
         </scene>
@@ -720,4 +714,7 @@
         <image name="engine" width="100" height="100"/>
         <image name="gearbox" width="96" height="96"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3bP-0X-03Z"/>
+    </inferredMetricsTieBreakers>
 </document>
