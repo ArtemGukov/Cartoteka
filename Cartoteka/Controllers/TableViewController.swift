@@ -7,25 +7,36 @@
 //
 
 import UIKit
+import CoreData
 
 class TableViewController: UITableViewController {
-
+    
     var cars = [Car]() {
         didSet {
             tableView.reloadData()
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        loadSample()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        fetchRequest()
     }
     
     //  MARK: - Custom methods
     
-    func loadSample() {
-        cars = Car.loadSample()
+    func fetchRequest() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = Car.fetchRequest() as NSFetchRequest<Car>
+        let sortDescriptor = NSSortDescriptor(key: "carId", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        do {
+            cars = try managedContext.fetch(fetchRequest)
+            } catch let error {
+            print(#line, #function, error)
+        }
     }
 
     // MARK: - Table view data source
@@ -42,39 +53,26 @@ class TableViewController: UITableViewController {
         return cell
     }
 
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-    }
-    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-    
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: { (action, indexPath) in
-            print("Delete tapped")
             
-            self.cars.remove(at: indexPath.row)
+            let itemToDelete = self.cars.remove(at: indexPath.row)
+            managedContext.delete(itemToDelete)
+            appDelegate.saveContext()
         })
     
         deleteAction.backgroundColor = UIColor.red
-        
         return [deleteAction]
     }
 
-    // MARK: - Navigation
-    
-    @IBAction func cancelPressed(segue: UIStoryboardSegue) {
-        
-    }
-   
-    @IBAction func savePressed(segue: UIStoryboardSegue) {
-        
-        guard let addTableViewController = segue.source as? AddTableViewController else { return }
-        
-        cars.append(addTableViewController.newCar)
-    }
+//    MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "detailSegue" else { return }
@@ -82,22 +80,19 @@ class TableViewController: UITableViewController {
         
         if let carIndex = tableView.indexPathForSelectedRow?.row {
             detailViewController.car = cars[carIndex]
-                        
         }
     }
-}
-
-extension TableViewController {
-    func configure(cell: CarViewCell, with car: Car) {
+    
+    // MARK: - IBActions
+   
+    @IBAction func savePressed(segue: UIStoryboardSegue) {
         
-        cell.labelModel.text = "\(car.brand!.rawValue) \(car.model!), \(car.yearOfManufacture!)"
-        cell.labelEngineType.text = "\(car.engineValue!) / \(car.enginePower!) л. с. / \(car.engineType!.rawValue)"
-        cell.labelTransmissionType.text = car.transmissionType?.rawValue
-        cell.labelBodyType.text = car.bodyType!.rawValue
-        cell.labelBodyColor.text = car.bodyColor!.rawValue
+        guard let addTableViewController = segue.source as? AddTableViewController else { return }
+        cars.append(addTableViewController.newCar)
+    }
+    
+    @IBAction func cancelPressed(segue: UIStoryboardSegue) {
         
-        guard let imageLogo = UIImage(named: "\(car.brand!.rawValue).png") else { return }
-        cell.imageLogo.image = imageLogo
-
     }
 }
+

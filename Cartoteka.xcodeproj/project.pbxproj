@@ -12,7 +12,6 @@
 		AC27C44A23450B8B002C66FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC27C44823450B8B002C66FB /* Main.storyboard */; };
 		AC27C44C23450B8D002C66FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC27C44B23450B8D002C66FB /* Assets.xcassets */; };
 		AC27C44F23450B8D002C66FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC27C44D23450B8D002C66FB /* LaunchScreen.storyboard */; };
-		AC27C45723450C52002C66FB /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC27C45623450C52002C66FB /* Data.swift */; };
 		AC27C45C23451180002C66FB /* EnumCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC27C45B23451180002C66FB /* EnumCar.swift */; };
 		AC27C45E23451B99002C66FB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC27C45D23451B99002C66FB /* TableViewController.swift */; };
 		AC27C46123452735002C66FB /* CarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC27C46023452735002C66FB /* CarViewCell.swift */; };
@@ -20,7 +19,13 @@
 		AC2E5B982347EA16003B616A /* Extension+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2E5B972347EA16003B616A /* Extension+TextField.swift */; };
 		AC2E5B9A23480D2A003B616A /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2E5B9923480D2A003B616A /* Extension+UIViewController.swift */; };
 		AC66129D234A9AE900CCEF23 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66129C234A9AE900CCEF23 /* AlertController.swift */; };
+		AC7C42C72353A0E10006FDD4 /* Car+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7C42C52353A0E10006FDD4 /* Car+CoreDataClass.swift */; };
+		AC7C42C82353A0E10006FDD4 /* Car+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7C42C62353A0E10006FDD4 /* Car+CoreDataProperties.swift */; };
+		AC81B9392357B94A0004A339 /* Extension+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC81B9382357B94A0004A339 /* Extension+TableViewController.swift */; };
+		AC81B93B2357B9870004A339 /* Extension+AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC81B93A2357B9870004A339 /* Extension+AddTableViewController.swift */; };
+		AC81B93D2357BF850004A339 /* PreloadedData.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC81B93C2357BF850004A339 /* PreloadedData.plist */; };
 		ACA93DC823474CAB008C624F /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA93DC723474CAB008C624F /* AddTableViewController.swift */; };
+		ACB262D823537066004123C1 /* Cartoteka.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACB262D623537066004123C1 /* Cartoteka.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +36,6 @@
 		AC27C44B23450B8D002C66FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC27C44E23450B8D002C66FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC27C45023450B8D002C66FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC27C45623450C52002C66FB /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		AC27C45B23451180002C66FB /* EnumCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCar.swift; sourceTree = "<group>"; };
 		AC27C45D23451B99002C66FB /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		AC27C46023452735002C66FB /* CarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewCell.swift; sourceTree = "<group>"; };
@@ -39,7 +43,13 @@
 		AC2E5B972347EA16003B616A /* Extension+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+TextField.swift"; sourceTree = "<group>"; };
 		AC2E5B9923480D2A003B616A /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		AC66129C234A9AE900CCEF23 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		AC7C42C52353A0E10006FDD4 /* Car+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AC7C42C62353A0E10006FDD4 /* Car+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AC81B9382357B94A0004A339 /* Extension+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+TableViewController.swift"; sourceTree = "<group>"; };
+		AC81B93A2357B9870004A339 /* Extension+AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+AddTableViewController.swift"; sourceTree = "<group>"; };
+		AC81B93C2357BF850004A339 /* PreloadedData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PreloadedData.plist; sourceTree = "<group>"; };
 		ACA93DC723474CAB008C624F /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
+		ACB262D723537066004123C1 /* Cartoteka.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cartoteka.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,17 +82,12 @@
 		AC27C44123450B8B002C66FB /* Cartoteka */ = {
 			isa = PBXGroup;
 			children = (
-				AC27C44223450B8B002C66FB /* AppDelegate.swift */,
-				AC66129C234A9AE900CCEF23 /* AlertController.swift */,
-				AC27C44423450B8B002C66FB /* SceneDelegate.swift */,
-				AC2E5B972347EA16003B616A /* Extension+TextField.swift */,
-				AC2E5B9923480D2A003B616A /* Extension+UIViewController.swift */,
+				AC27C458234510A5002C66FB /* Model */,
 				AC27C4622345273A002C66FB /* View */,
 				AC27C45F23451B9F002C66FB /* Controllers */,
-				AC27C458234510A5002C66FB /* Model */,
-				AC27C44823450B8B002C66FB /* Main.storyboard */,
-				AC27C44B23450B8D002C66FB /* Assets.xcassets */,
-				AC27C44D23450B8D002C66FB /* LaunchScreen.storyboard */,
+				ACC554DB235539FB00C621B7 /* Extensions */,
+				AC62AE952355A93B007C5056 /* Supporting files */,
+				ACB262D623537066004123C1 /* Cartoteka.xcdatamodeld */,
 				AC27C45023450B8D002C66FB /* Info.plist */,
 			);
 			path = Cartoteka;
@@ -91,7 +96,9 @@
 		AC27C458234510A5002C66FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AC27C45623450C52002C66FB /* Data.swift */,
+				AC7C42C52353A0E10006FDD4 /* Car+CoreDataClass.swift */,
+				AC7C42C62353A0E10006FDD4 /* Car+CoreDataProperties.swift */,
+				AC81B93C2357BF850004A339 /* PreloadedData.plist */,
 				AC27C45B23451180002C66FB /* EnumCar.swift */,
 			);
 			path = Model;
@@ -103,6 +110,7 @@
 				AC27C45D23451B99002C66FB /* TableViewController.swift */,
 				ACA93DC723474CAB008C624F /* AddTableViewController.swift */,
 				AC2E5B952347E8B3003B616A /* DetailViewController.swift */,
+				AC66129C234A9AE900CCEF23 /* AlertController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -113,6 +121,29 @@
 				AC27C46023452735002C66FB /* CarViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AC62AE952355A93B007C5056 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				AC27C44223450B8B002C66FB /* AppDelegate.swift */,
+				AC27C44423450B8B002C66FB /* SceneDelegate.swift */,
+				AC27C44823450B8B002C66FB /* Main.storyboard */,
+				AC27C44D23450B8D002C66FB /* LaunchScreen.storyboard */,
+				AC27C44B23450B8D002C66FB /* Assets.xcassets */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		ACC554DB235539FB00C621B7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC81B9382357B94A0004A339 /* Extension+TableViewController.swift */,
+				AC81B93A2357B9870004A339 /* Extension+AddTableViewController.swift */,
+				AC2E5B972347EA16003B616A /* Extension+TextField.swift */,
+				AC2E5B9923480D2A003B616A /* Extension+UIViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +207,7 @@
 				AC27C44F23450B8D002C66FB /* LaunchScreen.storyboard in Resources */,
 				AC27C44C23450B8D002C66FB /* Assets.xcassets in Resources */,
 				AC27C44A23450B8B002C66FB /* Main.storyboard in Resources */,
+				AC81B93D2357BF850004A339 /* PreloadedData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,10 +220,14 @@
 			files = (
 				AC27C44323450B8B002C66FB /* AppDelegate.swift in Sources */,
 				ACA93DC823474CAB008C624F /* AddTableViewController.swift in Sources */,
+				AC81B9392357B94A0004A339 /* Extension+TableViewController.swift in Sources */,
+				AC7C42C82353A0E10006FDD4 /* Car+CoreDataProperties.swift in Sources */,
 				AC27C44523450B8B002C66FB /* SceneDelegate.swift in Sources */,
-				AC27C45723450C52002C66FB /* Data.swift in Sources */,
+				AC7C42C72353A0E10006FDD4 /* Car+CoreDataClass.swift in Sources */,
+				ACB262D823537066004123C1 /* Cartoteka.xcdatamodeld in Sources */,
 				AC2E5B982347EA16003B616A /* Extension+TextField.swift in Sources */,
 				AC27C46123452735002C66FB /* CarViewCell.swift in Sources */,
+				AC81B93B2357B9870004A339 /* Extension+AddTableViewController.swift in Sources */,
 				AC27C45E23451B99002C66FB /* TableViewController.swift in Sources */,
 				AC27C45C23451180002C66FB /* EnumCar.swift in Sources */,
 				AC66129D234A9AE900CCEF23 /* AlertController.swift in Sources */,
@@ -343,6 +379,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z7SHMN27XP;
 				INFOPLIST_FILE = Cartoteka/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -361,6 +398,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z7SHMN27XP;
 				INFOPLIST_FILE = Cartoteka/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,6 +432,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ACB262D623537066004123C1 /* Cartoteka.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ACB262D723537066004123C1 /* Cartoteka.xcdatamodel */,
+			);
+			currentVersion = ACB262D723537066004123C1 /* Cartoteka.xcdatamodel */;
+			path = Cartoteka.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AC27C43723450B8B002C66FB /* Project object */;
 }

@@ -50,21 +50,48 @@ class DetailViewController: UIViewController {
         viewBody.layer.cornerRadius = 10
         viewTransmission.layer.cornerRadius = 10
         
-        guard let imageLogo = UIImage(named: "\(car.brand!.rawValue).png") else { return }
+        if let imageLogo = UIImage(named: "\(car.brand.rawValue).png") {
+            imageBrandLogo.image = imageLogo
+        }
+                
+        labelBrand.text = "\(car.brand.rawValue) \(car.model)"
+        labelYear.text = car.yearOfManufacture.description
         
-        imageBrandLogo.image = imageLogo
-        labelBrand.text = "\(car.brand!.rawValue) \(car.model!)"
-        labelYear.text = car.yearOfManufacture?.description
+        labelEngineType.text = car.engineType.rawValue
+        labelEngineValue.text = "\(car.engineValue) л."
+        labelEnginePower.text = "\(car.enginePower) л. с."
         
-        labelEngineType.text = car.engineType!.rawValue
-        labelEngineValue.text = "\(car.engineValue!) л."
-        labelEnginePower.text = "\(car.enginePower!) л. с."
+        labelBodyType.text = car.bodyType.rawValue
+        labelBodyColor.text = car.bodyColor.rawValue
         
-        labelBodyType.text = car.bodyType!.rawValue
-        labelBodyColor.text = car.bodyColor!.rawValue
+        labelTransmissionType.text = car.transmissionType.rawValue
+        labelTransmissionWheelDrive.text = "\(car.wheelDrive.rawValue) привод"
         
-        labelTransmissionType.text = car.transmissionType!.rawValue
-        labelTransmissionWheelDrive.text = "\(car.wheelDrive!.rawValue) привод"
+        setupBackgroundColor()
+    }
+    
+    func setupBackgroundColor() {
+        
+        switch car.bodyColor {
+        case .white:
+            view.backgroundColor = .white
+        case .yellow:
+            view.backgroundColor = .yellow
+        case .red:
+            view.backgroundColor = .red
+        case .blue:
+            view.backgroundColor = .blue
+        case .green:
+            view.backgroundColor = .green
+        case .black:
+            view.backgroundColor = .black
+        case .grey:
+            view.backgroundColor = .lightGray
+        case .orange:
+            view.backgroundColor = .orange
+        default:
+            break
+        }
     }
     
 //    MARK: - Navigation
@@ -74,13 +101,4 @@ class DetailViewController: UIViewController {
         guard let addTableViewController = segue.destination as? AddTableViewController else { return }
         addTableViewController.currentCar = car
     }
-    
-//    @IBAction func editPressed(segue: UIStoryboardSegue) {
-//
-//        guard let addTableViewController = segue.source as? AddTableViewController, let car = addTableViewController.newCar  else { return }
-//
-//        //cars.append(car)
-//    }
-    
-    
 }
