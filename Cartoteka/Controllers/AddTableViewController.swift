@@ -31,7 +31,6 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var wheelDriveTextField: UITextField!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     //    MARK: - Properties
     
@@ -181,7 +180,7 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate {
     func setupToolbar() {
         
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(AddTableViewController.closePickerView))
+        let doneButton = UIBarButtonItem(title: "Готово", style: .done, target: self, action: #selector(AddTableViewController.closePickerView))
         toolbar.setItems([doneButton], animated: false)
         toolbar.isUserInteractionEnabled = true
     }
@@ -202,10 +201,6 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-
-    }
-    
 //    MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -214,18 +209,12 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate {
         guard let entity = NSEntityDescription.entity(forEntityName: "Car", in: managedContext) else { return }
         
         if currentCar?.carId == nil {
-            
-            print(#line, #function, "add current car")
-
-            
-        switch segue.identifier {
-        
-            case "saveSegue":
+           
+            if segue.identifier == "saveSegue" {
             
             let newCar = NSManagedObject(entity: entity, insertInto: managedContext) as! Car
             
             newCar.carId = UUID().uuidString
-            print(newCar.carId)
             
             newCar.brand = Brand(rawValue: brandTextField.text!)!
             newCar.model = modelTextField.text!
@@ -240,23 +229,9 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate {
             
             newCar.wheelDrive = WheelDrive(rawValue: wheelDriveTextField.text!)!
             newCar.transmissionType = TransmissionType(rawValue: transmissionTypeTextField.text!)!
-            
-            do {
-                try managedContext.save()
-            } catch let error {
-                print(#line, #function, error)
-            }
-            
-            case "cancelSegue":
-                break
-            
-            default:
-                break
+    
         }
-        } else {
-            
-            print(#line, #function, "edit current car")
-            
+    } else {
             currentCar?.brand = Brand(rawValue: brandTextField.text!)!
             currentCar?.model = modelTextField.text!
             currentCar?.yearOfManufacture = Int32(yearTextField.text!)!
@@ -270,12 +245,12 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate {
             
             currentCar?.wheelDrive = WheelDrive(rawValue: wheelDriveTextField.text!)!
             currentCar?.transmissionType = TransmissionType(rawValue: transmissionTypeTextField.text!)!
-            
-            do {
-                try managedContext.save()
-            } catch let error {
-                print(#line, #function, error)
-            }
+        }
+        
+        do {
+            try managedContext.save()
+        } catch let error {
+            print(#line, #function, error)
         }
     }
     
@@ -288,7 +263,7 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate {
         
         if currentCar?.carId != nil {
             
-            title = "Edit"
+            title = "Редактировать"
             
             brandTextField.text = selectedRowPickerView(brandPicker, withText: currentCar!.brand.rawValue)
             modelTextField.text = currentCar!.model
@@ -307,8 +282,6 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate {
             if let image = UIImage(named: "\(currentCar!.brand.rawValue).png") {
                 imageLogo.image = image
             }
-            
-            
         }
     }
     
@@ -316,14 +289,10 @@ class AddTableViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
     
-        print(#line, #function)
-
         if areFieldsReady() {
-            
             self.performSegue(withIdentifier: "saveSegue", sender: nil)
-
         } else {
-            AlertController.alert(message: "Please check all fields", target: self)
+            AlertController.alert(message: "Необходимо заполнить все поля", target: self)
         }
     }
 }

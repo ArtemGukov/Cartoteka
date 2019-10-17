@@ -73,8 +73,7 @@ class DetailViewController: UIViewController {
     func setupBackgroundColor() {
         
         switch car.bodyColor {
-        case .white:
-            view.backgroundColor = .white
+        
         case .yellow:
             view.backgroundColor = .yellow
         case .red:
@@ -90,7 +89,16 @@ class DetailViewController: UIViewController {
         case .orange:
             view.backgroundColor = .orange
         default:
-            break
+            view.backgroundColor = .white
+
+            viewBrand.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            viewBrand.layer.borderWidth = 0.7
+            viewEngine.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            viewEngine.layer.borderWidth = 0.7
+            viewBody.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            viewBody.layer.borderWidth = 0.7
+            viewTransmission.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            viewTransmission.layer.borderWidth = 0.7
         }
     }
     

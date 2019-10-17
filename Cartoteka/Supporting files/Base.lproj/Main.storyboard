@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cars-->
+        <!--Список а/м-->
         <scene sceneID="R3q-GZ-FKb">
             <objects>
                 <tableViewController id="rdF-NR-BNq" customClass="TableViewController" customModule="Cartoteka" customModuleProvider="target" sceneMemberID="viewController">
@@ -101,7 +101,7 @@
                             <outlet property="delegate" destination="rdF-NR-BNq" id="krG-LB-BR2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cars" id="lf5-ZR-z13">
+                    <navigationItem key="navigationItem" title="Список а/м" id="lf5-ZR-z13">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="lf1-Of-Q7r">
                             <connections>
                                 <segue destination="Qal-0H-DlD" kind="show" identifier="addSegue" id="xFL-Hx-OXc"/>
@@ -189,7 +189,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GvQ-H8-nF3">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="75"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Engine" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="6c8-9h-0DW">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Двигатель" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="6c8-9h-0DW">
                                                         <rect key="frame" x="10" y="10" width="280" height="23"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -253,7 +253,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLd-iT-J4T">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="76"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgf-kT-yIp">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кузов" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgf-kT-yIp">
                                                         <rect key="frame" x="10" y="10" width="280" height="22.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -307,7 +307,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2g-w3-Aj1">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="76"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transmission" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zk8-CX-fT8">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Трансмиссия" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zk8-CX-fT8">
                                                         <rect key="frame" x="10" y="10" width="280" height="22.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -364,7 +364,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rU1-Xc-fol" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Aj8-cB-EnG" secondAttribute="bottom" constant="62" id="08g-VL-N82"/>
                             <constraint firstItem="rU1-Xc-fol" firstAttribute="trailing" secondItem="Aj8-cB-EnG" secondAttribute="trailing" constant="10" id="LLw-ml-g5X"/>
                             <constraint firstItem="Aj8-cB-EnG" firstAttribute="top" secondItem="rU1-Xc-fol" secondAttribute="top" constant="18" id="QLD-mY-IBs"/>
                             <constraint firstItem="Aj8-cB-EnG" firstAttribute="leading" secondItem="rU1-Xc-fol" secondAttribute="leading" constant="10" id="y5g-dp-hJ8"/>
@@ -372,7 +371,7 @@
                         <viewLayoutGuide key="safeArea" id="rU1-Xc-fol"/>
                     </view>
                     <navigationItem key="navigationItem" id="gyg-3v-L2a">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="lWq-Np-1LR">
+                        <barButtonItem key="rightBarButtonItem" title="Редактировать" id="lWq-Np-1LR">
                             <connections>
                                 <segue destination="Qal-0H-DlD" kind="show" identifier="editSegue" id="mrY-7O-bnq"/>
                             </connections>
@@ -402,7 +401,7 @@
             </objects>
             <point key="canvasLocation" x="1811.25" y="1013.0281690140845"/>
         </scene>
-        <!--Add-->
+        <!--Добавить-->
         <scene sceneID="WBx-Hb-0cZ">
             <objects>
                 <tableViewController id="Qal-0H-DlD" customClass="AddTableViewController" customModule="Cartoteka" customModuleProvider="target" sceneMemberID="viewController">
@@ -411,7 +410,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Brand" id="UsS-JC-7sC">
+                            <tableViewSection headerTitle="Марка" id="UsS-JC-7sC">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="1kK-qe-2Su">
                                         <rect key="frame" x="0.0" y="55.5" width="320" height="43.5"/>
@@ -420,8 +419,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Brand" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AuX-XY-b4p">
+                                                <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Марка" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AuX-XY-b4p">
                                                     <rect key="frame" x="16" y="0.0" width="240" height="44"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="Lf2-uJ-Mih"/>
                                                     </constraints>
@@ -454,7 +454,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YyY-Oq-EcV">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Модель" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YyY-Oq-EcV">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="7wL-Uh-6vY"/>
@@ -478,8 +478,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQP-CW-77G">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Год выпуска" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQP-CW-77G">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="44"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="3iG-FI-cEd"/>
                                                     </constraints>
@@ -497,7 +498,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Engine" id="i5L-d8-W5K">
+                            <tableViewSection headerTitle="Двигатель" id="i5L-d8-W5K">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YOx-Yo-5Ok">
                                         <rect key="frame" x="0.0" y="242" width="320" height="43.5"/>
@@ -506,8 +507,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpD-v5-PHz">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Тип двигателя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpD-v5-PHz">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="44"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="bIu-cb-3P4"/>
                                                     </constraints>
@@ -530,8 +532,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qQD-Ci-qAQ">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Объем, л" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qQD-Ci-qAQ">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="44"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="YlH-Ig-9Kg"/>
                                                     </constraints>
@@ -554,8 +557,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Power" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Y3-o3-Y0c">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Мощность, л. / с." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Y3-o3-Y0c">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="44"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="GIZ-in-e2O"/>
                                                     </constraints>
@@ -573,7 +577,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Body" id="nb8-dJ-YFF">
+                            <tableViewSection headerTitle="Кузов" id="nb8-dJ-YFF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="DtM-fR-paL">
                                         <rect key="frame" x="0.0" y="428.5" width="320" height="43.5"/>
@@ -582,8 +586,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GpM-g9-UnS">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Тип кузова" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GpM-g9-UnS">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="44"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="qYe-Ic-qXd"/>
                                                     </constraints>
@@ -606,8 +611,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Color" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l0e-Cl-JQv">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Цвет" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l0e-Cl-JQv">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="44"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="26F-XS-RNn"/>
                                                     </constraints>
@@ -625,7 +631,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Transmission" id="8xJ-bt-2v1">
+                            <tableViewSection headerTitle="Трансмиссия" id="8xJ-bt-2v1">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="M7i-2k-Z5p">
                                         <rect key="frame" x="0.0" y="571.5" width="320" height="43.5"/>
@@ -634,8 +640,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="113-AW-oDT">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Тип КПП" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="113-AW-oDT">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="44"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="b9e-qG-LQ3"/>
                                                     </constraints>
@@ -658,8 +665,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Wheel drive" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mux-i7-bpJ">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Привод" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mux-i7-bpJ">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="44"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="zuf-Pf-mQD"/>
                                                     </constraints>
@@ -683,13 +691,13 @@
                             <outlet property="delegate" destination="Qal-0H-DlD" id="Wpg-aH-UcG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add" id="nAw-9l-6QI">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ci3-1F-krI">
+                    <navigationItem key="navigationItem" title="Добавить" id="nAw-9l-6QI">
+                        <barButtonItem key="leftBarButtonItem" title="Отмена" id="Ci3-1F-krI">
                             <connections>
                                 <segue destination="zgp-GU-rAY" kind="unwind" unwindAction="cancelPressedWithSegue:" id="AsC-aY-eLv"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="pdq-O4-4me">
+                        <barButtonItem key="rightBarButtonItem" title="Сохранить" id="pdq-O4-4me">
                             <connections>
                                 <action selector="savePressed:" destination="Qal-0H-DlD" id="5xc-zO-Meg"/>
                             </connections>
